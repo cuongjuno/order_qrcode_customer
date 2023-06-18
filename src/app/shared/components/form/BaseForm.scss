@@ -1,0 +1,20 @@
+.base-form {
+  .ant-form-item .ant-form-item-label > label {
+    color: $black-050;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .ant-form-item {
+    padding: 16px 0;
+    border-bottom: 1px solid $black-015;
+    margin: 0;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &.view-mode {
+    .ant-form-item {
+      padding: 1px 0;
+    }
+  }
+}

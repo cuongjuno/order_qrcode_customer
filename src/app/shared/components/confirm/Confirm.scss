@@ -1,0 +1,30 @@
+.delete-confirm-modal {
+  position: relative;
+  min-width: 480px;
+  max-width: 600px;
+  .ant-modal-confirm-body {
+    .ant-modal-confirm-title {
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .ant-modal-confirm-content {
+      margin-block-start: 15px !important;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+  .ant-modal-confirm-btns {
+    .confirm-ok-btn {
+      margin-inline-start: 15px !important;
+      border: 1px solid $error;
+    }
+    .confirm-cancel-btn {
+      border: 1px solid $primary;
+    }
+  }
+  .ant-modal-close {
+    position: absolute;
+    top: -30px;
+    right: 5px;
+  }
+}

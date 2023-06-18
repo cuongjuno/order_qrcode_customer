@@ -1,0 +1,31 @@
+.m-auto {
+  margin: 0 auto;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+// button
+button.ant-btn {
+  font-weight: 700;
+}
+
+// set antd menu tooltip bg color
+.ant-menu-submenu-popup .ant-menu {
+  background-color: $primary !important;
+  .ant-menu-item {
+    display: flex;
+    align-items: center;
+    color: $white;
+  }
+}
+
+// box-shadow
+.shadow-panel {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ant-notification {
+  z-index: 9999999;
+}

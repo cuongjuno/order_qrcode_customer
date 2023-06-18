@@ -1,0 +1,56 @@
+.layout-sidebar {
+  border-top-right-radius: 24px;
+  z-index: 99;
+  height: 100vh;
+  .ant-layout-sider,
+  .ant-menu-light {
+    background-color: #001529;
+  }
+  .logo-wrapper-collapsed {
+    column-gap: 20px;
+  }
+  .logo-icon {
+    transition: width ease-in-out 0.2s;
+    svg {
+      width: 100%;
+      path {
+        fill: $white;
+      }
+    }
+  }
+  .arrow-icon {
+    transition: all ease-in-out 0.2s;
+  }
+  .right-active {
+    transform: rotate(180deg);
+  }
+  .menu-bar {
+    height: calc(100vh - 83px);
+    .ant-menu-item {
+      height: 48px;
+    }
+    .ant-menu-submenu-title {
+      height: 48px;
+      padding-inline-end: 24px;
+      svg > g {
+        fill: $white;
+      }
+      .ant-menu-title-content {
+        a {
+          color: $white;
+        }
+      }
+    }
+    .ant-menu-item-icon {
+      font-size: 18px;
+    }
+    .ant-menu-submenu {
+      .ant-menu-sub {
+        background: #001529;
+        .ant-menu-item {
+          padding-left: 24px !important;
+        }
+      }
+    }
+  }
+}

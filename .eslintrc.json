@@ -1,3 +1,78 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["airbnb", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "react/forbid-prop-types": ["off"],
+    "react/no-unstable-nested-components": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-use-before-define": "off",
+    "prefer-regex-literals": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
+  },
+  "settings": {
+    "react": { "version": "18.2" },
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["~login/*", "./src/app/login"],
+          ["~components/*", "./src/app/shared/components"],
+          ["~constant/*", "./src/app/shared/constant"],
+          ["~hooks/*", "./src/app/shared/hooks"],
+          ["~layouts/*", "./src/app/shared/layouts"],
+          ["~query-hooks/*", "./src/app/shared/services/query-hooks"],
+          ["~services/*", "./src/app/shared/services"],
+          ["~store/*", "./src/app/shared/store"],
+          ["~styles/*", "./src/app/shared/styles"],
+          ["~utils/*", "./src/app/shared/utils"],
+          ["~app/*", "./src/app"],
+          ["~core/*", "./src/core"],
+          ["~static/*", "./src/static"]
+        ],
+        "extensions": [".js", ".jsx", ".json"]
+      }
+    }
+  },
+  "overrides": [
+    // override "simple-import-sort" config
+    {
+      "files": ["src/**/*.{js,jsx}"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Packages `react` related packages come first.
+              ["^react", "^@?\\w"],
+              // Internal packages.
+              ["^(@|components)(/.*|$)"],
+              // Side effect imports.
+              ["^\\u0000"],
+              // Parent imports. Put `..` last.
+              ["^~.", "^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              // Other relative imports. Put same-folder imports and `.` last.
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              // Style imports.
+              ["^.+\\.?(css)$"]
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "ignorePatterns": ["vite.config.js"]
 }
