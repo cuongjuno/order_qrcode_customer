@@ -1,0 +1,178 @@
+@import './mixin';
+
+$xxl: 1600px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 480px;
+
+// color
+$primary: #f2994a;
+$primary-080: #466785;
+$primary-050: #90a0af;
+$primary-030: #dbe4ec;
+$primary-010: #f0f5f9;
+
+$error: #cb0a29;
+$error-fill: #fdeff1;
+$safe: #006737;
+$safe-fill: #f0f8f6;
+$warning: #f2bb2c;
+$warning-fill: #fff5db;
+
+$black: #171717;
+$black-080: #424242;
+$black-070: #707070;
+$black-050: #8f8f8f;
+$black-030: #d5d5d5;
+$black-015: #eeeeee;
+$black-005: #f7f7f7;
+
+$text-normal: #222222;
+$text-disable: #999999;
+$text-label: #6b6b6b;
+$text-050: #8f8f8f;
+$text-030: #d4d4d4;
+$text-015: #eeeeee;
+$text-005: #f5f5f5;
+
+$link: #2a74aa;
+$white: #ffffff;
+$green: #077c84;
+
+// Adjust this to include the pixel amounts you need.
+// width and height, margin and padding
+$space-amount-custom: (800);
+$space-amount-default: (
+  0,
+  1,
+  2,
+  4,
+  6,
+  8,
+  10,
+  12,
+  14,
+  16,
+  20,
+  24,
+  28,
+  32,
+  36,
+  40,
+  44,
+  48,
+  56,
+  64,
+  80,
+  96,
+  112,
+  128,
+  144,
+  160,
+  176,
+  192,
+  208,
+  224,
+  240,
+  256,
+  288,
+  320,
+  384
+);
+$space-amounts: append($space-amount-default, $space-amount-custom);
+
+$position-types: (relative, absolute, fixed, sticky);
+$display-types: (block, inline-block, inline, flex, inline-flex);
+$text-align-types: (center, start, end);
+$overflow-types: (auto, hidden, scroll);
+$overflow-x-types: (auto, hidden, scroll);
+$overflow-y-types: (auto, hidden, scroll);
+$justify-content-types: (normal, flex-start, flex-end, center, space-between, space-around);
+$justify-items-types: (start, end, center);
+$align-content-types: (normal, flex-start, flex-end, center, space-between, space-around);
+$align-items-types: (flex-start, flex-end, center);
+$flex-direction-types: (row, row-reverse, column, column-reverse);
+$border-radius-types: (0, 1, 2, 3, 4);
+$border-width-types: (0, 1, 2, 4);
+$border-style-types: (solid, dashed, dotted, double, hidden, none);
+$opacity-types: (0, 5, 10, 20, 40, 50, 60, 70, 75, 80, 90, 95, 100);
+$cursor-types: (auto, default, pointer, grab, grabbing);
+$pointer-events-types: (auto, none);
+$user-select-types: (none, text, auto, all);
+$stroke-width-types: (0, 1, 2);
+
+$atomicMap: (
+  ('pos', 'position', $position-types),
+  ('dis', 'display', $display-types),
+  ('text', 'text-align', $text-align-types),
+  ('overflow', 'overflow', $overflow-types),
+  ('overflow-x', 'overflow-x', $overflow-x-types),
+  ('overflow-y', 'overflow-y', $overflow-x-types),
+  ('jc', 'justify-content', $justify-content-types),
+  ('ji', 'justify-items', $justify-items-types),
+  ('ac', 'align-content', $align-content-types),
+  ('ai', 'align-items', $align-items-types),
+  ('flex', 'flex-direction', $flex-direction-types),
+  ('rounded', 'border-radius', $border-radius-types, px),
+  ('border', 'border-width', $border-width-types, px),
+  ('border-b', 'border-bottom-width', $border-width-types, px),
+  ('border', 'border-style', $border-style-types),
+  ('opacity', 'opacity', $opacity-types, '%'),
+  ('cursor', 'cursor', $cursor-types),
+  ('pointer-events', 'pointer-events', $pointer-events-types),
+  ('select', 'user-select', $user-select-types),
+  ('stroke', 'stroke-width', $stroke-width-types),
+  ('w', 'width', $space-amounts, px),
+  ('min-w', 'min-width', $space-amounts, px),
+  ('max-w', 'max-width', $space-amounts, px),
+  ('h', 'height', $space-amounts, px),
+  ('min-h', 'min-height', $space-amounts, px),
+  ('max-h', 'max-height', $space-amounts, px),
+  ('ma', 'margin', $space-amounts, px),
+  ('mt', 'margin-top', $space-amounts, px),
+  ('mr', 'margin-right', $space-amounts, px),
+  ('mb', 'margin-bottom', $space-amounts, px),
+  ('ml', 'margin-left', $space-amounts, px),
+  ('mx', ('margin-left', 'margin-right'), $space-amounts, px),
+  ('my', ('margin-top', 'margin-bottom'), $space-amounts, px),
+  ('pa', 'padding', $space-amounts, px),
+  ('pt', 'padding-top', $space-amounts, px),
+  ('pr', 'padding-right', $space-amounts, px),
+  ('pb', 'padding-bottom', $space-amounts, px),
+  ('pl', 'padding-left', $space-amounts, px),
+  ('px', ('padding-left', 'padding-right'), $space-amounts, px),
+  ('py', ('padding-top', 'padding-bottom'), $space-amounts, px)
+);
+
+$colorMap: (
+  'primary': $primary,
+  'primary-080': $primary-080,
+  'primary-050': $primary-050,
+  'primary-030': $primary-030,
+  'primary-010': $primary-010,
+  'error': $error,
+  'error-fill': $error-fill,
+  'safe': $safe,
+  'safe-fill': $safe-fill,
+  'warning': $warning,
+  'warning-fill': $warning-fill,
+  'black': $black,
+  'black-080': $black-080,
+  'black-070': $black-070,
+  'black-050': $black-050,
+  'black-030': $black-030,
+  'black-015': $black-015,
+  'black-005': $black-005,
+  'text-normal': $text-normal,
+  'text-disable': $text-disable,
+  'text-label': $text-label,
+  'text-050': $text-050,
+  'text-030': $text-030,
+  'text-015': $text-015,
+  'text-005': $text-005,
+  'link': $link,
+  'white': $white,
+  'green': $green,
+);

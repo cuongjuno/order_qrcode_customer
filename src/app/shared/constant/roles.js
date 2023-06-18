@@ -1,0 +1,8 @@
+const ROLES = {
+  SYSTEM_ADMIN: '01',
+  KYOTO_SPACER: '02',
+  TRANSPORT_COMPANY: '03',
+  CARRIAGE_COMPANY: '04',
+};
+
+export default ROLES;

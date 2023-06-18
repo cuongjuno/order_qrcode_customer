@@ -1,0 +1,40 @@
+.toast-message {
+  min-width: 400px;
+  width: auto !important;
+  max-width: 600px;
+  padding: 10px !important;
+  &.noti-success {
+    border: 1px solid $safe !important;
+  }
+  &.noti-error {
+    border: 1px solid $error !important;
+  }
+  &.noti-warning {
+    border: 1px solid $warning !important;
+  }
+  .ant-notification-notice-content .ant-notification-notice-with-icon {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    .ant-notification-notice-icon {
+      position: static;
+    }
+    .ant-notification-notice-message {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .ant-notification-notice {
+      padding: 0;
+    }
+    .ri-checkbox-circle-fill {
+      color: $safe;
+    }
+    .ri-close-circle-fill {
+      color: $error;
+    }
+    .ri-error-warning-fill {
+      color: $warning;
+    }
+  }
+}

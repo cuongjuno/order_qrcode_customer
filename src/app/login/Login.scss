@@ -1,0 +1,42 @@
+.login {
+  .background-img {
+    background-image: url(static/images/bg_img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .form-login,
+  .reset-pwd-form {
+    margin: 0 auto;
+  }
+
+  .ant-input-password-icon {
+    color: #006acc;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .info-board {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: start;
+    font-size: 12px;
+  }
+
+  ul {
+    padding-left: 0px;
+    li {
+      display: flex;
+      margin-bottom: 10px;
+    }
+  }
+  .back-login-btn {
+    width: 80%;
+    margin-top: 40px;
+  }
+}

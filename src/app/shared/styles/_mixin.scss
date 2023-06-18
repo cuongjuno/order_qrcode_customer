@@ -1,0 +1,39 @@
+@mixin generateAtomic($module) {
+  $prefix: nth($module, 1);
+  $properties: nth($module, 2);
+  $values: nth($module, 3);
+  $suffix: if(length($module) >= 4, nth($module, 4), null);
+
+  @each $value in $values {
+    $className: '#{$prefix}-#{$value}';
+    $valueWithSuffix: if($suffix, $value + $suffix, $value);
+    .#{$className} {
+      @if type-of($properties) == 'list' {
+        @each $property in $properties {
+          #{$property}: $valueWithSuffix !important;
+        }
+      } @else {
+        #{$properties}: $valueWithSuffix !important;
+      }
+    }
+  }
+}
+
+@mixin createColorClass($colorName, $colorValue) {
+  $className: to-lower-case($colorName);
+
+  .#{$className} {
+    color: $colorValue !important;
+  }
+  .bg-#{$className} {
+    background-color: $colorValue !important;
+  }
+  // fill svg path
+  .fill-#{$className} path {
+    fill: $colorValue !important;
+  }
+  // fill bg svg
+  .svg-fill-#{$className} {
+    fill: $colorValue !important;
+  }
+}

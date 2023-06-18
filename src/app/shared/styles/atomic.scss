@@ -1,0 +1,84 @@
+@import './mixin';
+
+@each $module in $atomicMap {
+  @include generateAtomic($module);
+}
+
+@each $colorName, $colorValue in $colorMap {
+  @include createColorClass($colorName, $colorValue);
+}
+
+// font-size
+// example: fz-8 to fz-40
+@for $i from 8 through 40 {
+  .fs-#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
+
+//font-weight
+// example: fw-100, fw-900
+@for $i from 1 through 9 {
+  .fw-#{$i * 100} {
+    font-weight: ($i * 100) !important;
+  }
+}
+
+@for $i from 0 through 40 {
+  .top-#{$i} {
+    top: #{$i}px !important;
+  }
+  .bottom-#{$i} {
+    bottom: #{$i}px !important;
+  }
+  .left-#{$i} {
+    left: #{$i}px !important;
+  }
+  .right-#{$i} {
+    right: #{$i}px !important;
+  }
+  .-top-#{$i} {
+    top: -#{$i}px !important;
+  }
+  .-bottom-#{$i} {
+    bottom: -#{$i}px !important;
+  }
+  .-left-#{$i} {
+    left: -#{$i}px !important;
+  }
+  .-right-#{$i} {
+    right: -#{$i}px !important;
+  }
+}
+
+// width, height:
+.w-full {
+  width: 100% !important;
+}
+.w-screen {
+  width: 100vw !important;
+}
+.w-min {
+  width: min-content !important;
+}
+.w-max {
+  width: max-content !important;
+}
+.w-fit {
+  width: fit-content !important;
+}
+.h-full {
+  height: 100% !important;
+}
+.h-screen {
+  height: 100vh !important;
+}
+.h-min {
+  height: min-content !important;
+}
+.h-max {
+  height: max-content !important;
+}
+.h-fit {
+  height: fit-content !important;
+}
